@@ -28,21 +28,20 @@ getInfomation() {
 
 getInfomation
 
-mkdir -p "../../Logs/${crashFileName}"
-
-symbolicatecrashPath="../Files/symbolicatecrash"
-dSYMPath="../Files/EZView.app.dSYM"
-
 targetFilePath="../../Logs/${crashFileName}"
+mkdir -p $targetFilePath
 
 echo "copying files..."
-cp -f -r $crashFilePath $symbolicatecrashPath $dSYMPath $targetFilePath
+cp -f -r $crashFilePath $targetFilePath
 
 cd $targetFilePath
 
+symbolicatecrashPath="../../Tools/Files/symbolicatecrash"
+dSYMPath="../../Tools/Files/EZView.app.dSYM"
+
 echo "decoding..."
 export DEVELOPER_DIR="/Applications/Xcode.app/Contents/Developer"
-./symbolicatecrash $crashFileFullName ./EZView.app.dSYM >./$crashFileName.log
+./$symbolicatecrashPath $crashFileFullName dSYMPath >$crashFileName.log
 
 echo -e "\n${Default}================================================"
 echo -e "  Target Log File Path  :  ${Cyan}${targetFilePath}${Default}"
