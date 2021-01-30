@@ -51,7 +51,7 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>function run(input, parameters) {    var command = 'cd /Users/smb-lsp/Desktop/DecodeCrashLog/Tools/Script &amp;&amp; ./decodeCrashLog.sh ' + input;	return command;}</string>
+					<string>function run(input, parameters) {    var command = 'cd ~/Desktop/DecodeCrashLog/Tools/Script &amp;&amp; ./decodeCrashLog.sh ' + input;	return command;}</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunJavaScript</string>
@@ -123,6 +123,107 @@
 					<key>Optional</key>
 					<true/>
 					<key>Types</key>
+					<array/>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>1.1.1</string>
+				<key>AMApplication</key>
+				<array>
+					<string>访达</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>appPath</key>
+					<dict>
+						<key>isPathPopUp</key>
+						<true/>
+						<key>variableUUIDsInMenu</key>
+						<array/>
+					</dict>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array/>
+				</dict>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Launch Application.action</string>
+				<key>ActionName</key>
+				<string>开启应用程序</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>appPath</key>
+					<string>/System/Applications/Utilities/Terminal.app</string>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.Automator.OpenApplication</string>
+				<key>CFBundleVersion</key>
+				<string>1.1.1</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<true/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryUtilities</string>
+				</array>
+				<key>Class Name</key>
+				<string>AMLaunchApplicationAction</string>
+				<key>InputUUID</key>
+				<string>FDE2DCB8-B56E-4B78-94AD-ECCC26C18C9E</string>
+				<key>Keywords</key>
+				<array>
+					<string>文件</string>
+					<string>打开</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>02DCDA70-AAF2-4CFF-9036-B18C2E8A9A92</string>
+				<key>UUID</key>
+				<string>F575BD21-6829-4866-AFA1-DA57BFF60946</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Finder</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<string>/System/Applications/Contacts.app</string>
+						<key>name</key>
+						<string>appPath</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+				</dict>
+				<key>conversionLabel</key>
+				<integer>0</integer>
+				<key>isViewVisible</key>
+				<true/>
+				<key>location</key>
+				<string>609.000000:470.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Launch Application.action/Contents/Resources/Base.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<true/>
+					<key>Types</key>
 					<array>
 						<string>com.apple.applescript.object</string>
 					</array>
@@ -154,7 +255,7 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>on run {input}	tell application "iTerm"				set newWindow to (create window with default profile)				tell current session of newWindow						write text input					end tell			end tellend run</string>
+					<string>on run {input}	tell application "Terminal"		do script input	end tellend run</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunScript</string>
@@ -171,15 +272,15 @@
 				<key>Class Name</key>
 				<string>RunScriptAction</string>
 				<key>InputUUID</key>
-				<string>C99D7DBF-AB15-44FA-8B9C-52DE9653A791</string>
+				<string>75D5EBA1-06C1-4FAE-A5D3-DB3860350129</string>
 				<key>Keywords</key>
 				<array>
 					<string>运行</string>
 				</array>
 				<key>OutputUUID</key>
-				<string>766A615E-63AF-4813-8931-65FAA2EA1228</string>
+				<string>502FADC7-4EF0-45F1-A083-3C4A38CF10B3</string>
 				<key>UUID</key>
-				<string>2A8B14CA-BBB6-4207-BD2C-99CF843C5FEE</string>
+				<string>60568C4F-6A69-47AD-8D0D-1F426BA07AEE</string>
 				<key>UnlocalizedApplications</key>
 				<array>
 					<string>Automator</string>
@@ -205,10 +306,12 @@ end run</string>
 						<string>0</string>
 					</dict>
 				</dict>
+				<key>conversionLabel</key>
+				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>609.000000:613.000000</string>
+				<string>609.000000:715.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -218,12 +321,19 @@ end run</string>
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>C90F51DD-4A7C-454E-A39D-A8F4E23A695F</key>
+		<key>B1487FDC-7450-49E9-823E-5A4ABEFD321F</key>
 		<dict>
 			<key>from</key>
 			<string>9C4DD825-A802-486A-B658-B554280C636B - 9C4DD825-A802-486A-B658-B554280C636B</string>
 			<key>to</key>
-			<string>2A8B14CA-BBB6-4207-BD2C-99CF843C5FEE - 2A8B14CA-BBB6-4207-BD2C-99CF843C5FEE</string>
+			<string>F575BD21-6829-4866-AFA1-DA57BFF60946 - F575BD21-6829-4866-AFA1-DA57BFF60946</string>
+		</dict>
+		<key>E880C18D-11D2-4138-856C-D0B23202A8ED</key>
+		<dict>
+			<key>from</key>
+			<string>F575BD21-6829-4866-AFA1-DA57BFF60946 - F575BD21-6829-4866-AFA1-DA57BFF60946</string>
+			<key>to</key>
+			<string>60568C4F-6A69-47AD-8D0D-1F426BA07AEE - 60568C4F-6A69-47AD-8D0D-1F426BA07AEE</string>
 		</dict>
 	</dict>
 	<key>variables</key>
