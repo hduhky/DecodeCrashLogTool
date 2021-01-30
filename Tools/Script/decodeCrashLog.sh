@@ -40,6 +40,7 @@ symbolicatecrashPath="../../Tools/Files/symbolicatecrash"
 dSYMPath="../../Tools/Files/EZView.app.dSYM"
 
 echo "decoding..."
+chmod 777 $symbolicatecrashPath
 export DEVELOPER_DIR="/Applications/Xcode.app/Contents/Developer"
 ./$symbolicatecrashPath $crashFileFullName dSYMPath >$crashFileName.log
 
