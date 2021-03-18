@@ -18,7 +18,7 @@
 			<string>runWorkflowAsService</string>
 			<key>NSSendFileTypes</key>
 			<array>
-				<string>public.item</string>
+				<string>public.content</string>
 			</array>
 		</dict>
 	</array>
