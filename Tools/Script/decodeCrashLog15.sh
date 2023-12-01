@@ -42,7 +42,7 @@ crashSymbolicatorPath="/Applications/Xcode13.app/Contents/SharedFrameworks/CoreS
 dSYMPath="../../Tools/Files/EZView.app.dSYM"
 
 echo "decoding..."
-python3 $crashSymbolicatorPath $crashFileFullName -d $dSYMPath -o $crashFileName.crash
+python3 $crashSymbolicatorPath $crashFileFullName -d $dSYMPath -o $crashFileName-crash.ips
 
 echo -e "\n${Default}================================================"
 echo -e "  Target Log File Path  :  ${Cyan}${targetFilePath}${Default}"
